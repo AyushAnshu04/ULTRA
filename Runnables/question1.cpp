@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "Dijkstra.h" // Include your Dijkstra's algorithm implementation header file here
+#include "Dijkstra.h"
 
 int main() {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
@@ -9,8 +9,8 @@ int main() {
     double totalRuntime = 0.0;
 
     for (int i = 0; i < numPairs; ++i) {
-        int source = std::rand() % numNodes;
-        int target = std::rand() % numNodes; // Replace 'numNodes' with the total number of nodes in your graph
+        int source = std::rand() % graph.numVertices();
+        int target = std::rand() % graph.numVertices();
 
         auto start = std::chrono::high_resolution_clock::now();
         Dijkstra(source, target);
